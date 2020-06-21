@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Picqer - Inkoop - Verwijderen niet verkochte
 // @namespace
-// @version      0.1
+// @version      0.2
 // @description  Take over the world!
 // @author       MoneyMalibu
 // @match        https://nolimit2003.picqer.com/purchaseorders/create
@@ -32,13 +32,15 @@ function VerwijderenProducten() {
     for (var PR = TotaalProductRegels.length-1; PR > -1 ; PR--) {
         debugger;
         var AantalVerkocht = parseInt(ProductenLijst[0].childNodes[PR].childNodes[8].childNodes[0].nodeValue);
+        var AantalVoorraad = parseInt(ProductenLijst[0].childNodes[PR].childNodes[6].childNodes[0].nodeValue);
         debugger;
-        var VerwijderenOfNiet = false
-        if(AantalVerkocht === 0){
-            VerwijderenOfNiet = true;
-        }
-        if(VerwijderenOfNiet === true) {
-            ProductenLijst[0].childNodes[PR].remove();
+        var AantalVerkochtVerwijderen = false;
+        var AantalVoorraadVerwijderen = true;
+        if (AantalVoorraad > -1) {
+            if(AantalVerkocht === 0){
+                ProductenLijst[0].childNodes[PR].remove();
+            }
+            AantalVoorraadVerwijderen = false;
         }
     }
 
@@ -52,5 +54,6 @@ function VerwijderenProducten() {
         };
     };
 };
+
 
 
