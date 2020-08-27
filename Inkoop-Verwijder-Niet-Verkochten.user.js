@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Picqer - Inkoop - Verwijderen niet verkochte
 // @namespace
-// @version      0.2
+// @version      0.3
 // @description  Take over the world!
 // @author       MoneyMalibu
 // @match        https://nolimit2003.picqer.com/purchaseorders/create
