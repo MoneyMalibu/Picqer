@@ -42,6 +42,9 @@ function VerwijderenProducten() {
             }
             AantalVoorraadVerwijderen = false;
         }
+        if (AantalVerkocht > AantalVoorraad){
+            ProductenLijst[0].childNodes[PR].style.backgroundColor = "red";
+        }
     }
 
 
