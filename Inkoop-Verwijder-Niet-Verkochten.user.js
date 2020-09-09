@@ -53,7 +53,6 @@ function VerwijderenProducten() {
     for (var table = Tables.length-1; table > -1 ; table--) {
         if (Tables[table].innerText.indexOf("Meer links toevoegen per rubriek") > -1) {
             //debugger;
-
         };
     };
 };
