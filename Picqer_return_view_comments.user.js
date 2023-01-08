@@ -6,6 +6,8 @@
 // @author       You
 // @match        https://nolimit2003.picqer.com/returns/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=picqer.com
+// @downloadURL  https://github.com/MoneyMalibu/Picqer/raw/master/Picqer_return_view_comments.user.js
+// @updateURL    https://github.com/MoneyMalibu/Picqer/raw/master/Picqer_return_view_comments.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -17,7 +19,6 @@
         const collectionA = document.getElementById("content").getElementsByTagName("A");
         for (let i = 0; i < collectionA.length; i++) {
             if(collectionA[i].href.indexOf("orders") > 0){
-                //https://nolimit2003.picqer.com/api/v1/orders/113405651/comments
                 let commentsURL = `/api/v1${collectionA[i].pathname}/comments`
                 console.log(commentsURL);
                 $.get(commentsURL, function(response) {
